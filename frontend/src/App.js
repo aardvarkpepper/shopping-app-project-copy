@@ -22,29 +22,39 @@ import RetailerNewProduct from "./components/Retailers/RetailerNewProduct.jsx";
 import RetailerEditProduct from "./components/Retailers/RetailerEditProduct.jsx";
 import RetailerShowProduct from "./components/Retailers/RetailerShowProduct.jsx"
 
-//import bootstrap from 'bootstrap';
-
 import { useEffect } from 'react';
 
 function App() {
-  const [loggedInAs, setLoggedInAs] = useState({id: "Guest", first_name: "Guest"});
+  const [loggedInAs, setLoggedInAs] = useState({
+    id: "Guest",
+    first_name: "Guest",
+    last_name: "Guest",
+    email:  "Guest@nomail.com",
+    phone:  "0000000000",
+    address_street: "No given street",
+    address_street2: "No given address",
+    address_city:  "No given city",
+    address_state: "No given state",
+    address_postal_code: "No given postal code",
+    payment_info: "No given payment type"
+  });
+  /*
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR(80) NOT NULL,
+  last_name VARCHAR(80) NOT NULL,
+  email VARCHAR(120) NOT NULL,
+  phone VARCHAR(30) NOT NULL,
+  address_street VARCHAR(60) NOT NULL,
+  address_street2 VARCHAR(30),
+  address_city VARCHAR(80) NOT NULL,
+  address_state VARCHAR(40) NOT NULL,
+  address_postal_code VARCHAR(40) NOT NULL,
+  payment_info TEXT NOT NULL
+  */
   const [cart, setCart] = useState({});
-
-  useEffect(() => {
-    // console.log("AppCart", cart);
-    // console.log("AppCarRef", cart[`customer${loggedInAs.id}`])
-  },[loggedInAs.id, cart])
 
   return (
     <div className="App">
-      <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
-        <p className="text-3xl text-gray-700 font-bold mb-5">
-          Welcome!
-        </p>
-        <p className="text-gray-500 text-lg">
-          React and Tailwind CSS in action
-        </p>
-      </div>
       <Router>
         <header>
           <NavBar loggedInAs={loggedInAs} />
@@ -53,12 +63,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
 
-            <Route path="/customers" element={<Customers setLoggedInAs={setLoggedInAs} />} />
-            <Route path="/customers/new" element={<NewCustomer />} />
-            <Route path="/customers/:id" element={<CustomerDetails />} />
-            <Route path="/customers/:id/edit" element={<EditCustomer setLoggedInAs={setLoggedInAs} />} />
-            <Route path="/customers/:id/cart" element={<CustomerCart loggedInAs={loggedInAs} customerCart={cart[`customer${loggedInAs.id}`]} cart={cart} setCart={setCart} />} />
-            <Route path="/customers/:id/history" element={<CustomerHistory loggedInAs={loggedInAs} />} />
+            <Route exact path="/customers" element={<Customers setLoggedInAs={setLoggedInAs} />} />
+            <Route exact path="/customers/new" element={<NewCustomer />} />
+            <Route exact path="/customers/:id" element={<CustomerDetails />} />
+            <Route exact path="/customers/:id/edit" element={<EditCustomer setLoggedInAs={setLoggedInAs} />} />
+            <Route exact path="/customers/:id/cart" element={<CustomerCart loggedInAs={loggedInAs} customerCart={cart[`customer${loggedInAs.id}`]} cart={cart} setCart={setCart} />} />
+            <Route exact path="/customers/:id/history" element={<CustomerHistory loggedInAs={loggedInAs} />} />
 
             <Route path="/products" element={<Products cart={cart} setCart={setCart} loggedInAs={loggedInAs}/>} />
             <Route path="/products/:id" element={<Product />} />
