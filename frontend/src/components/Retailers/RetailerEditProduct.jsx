@@ -44,11 +44,8 @@ export default function RetailerEditProduct() {
             .then(() => {
                 navigate(`/retailer/products`);
             },
-                //adds a callback function in case doesn't work.  So the .then works like an if/else
-                // the "error" below catches a front end error.
                 (error) => console.error(error)
             )
-            // the .catch c below catches a back end error.
             .catch((c) => console.warn("catch", c))
     }
 
@@ -70,17 +67,6 @@ export default function RetailerEditProduct() {
         event.preventDefault();
         updateProduct(product, id);
     };
-    /*
-      id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
-  description VARCHAR(120) NOT NULL,
-  image_url VARCHAR(120),
-  price DECIMAL(10,2) NOT NULL CHECK (price >=0),
-  quantity_in_stock INT NOT NULL CHECK (price >=0),
-  card_id VARCHAR(12),
-  card_rarity VARCHAR(18),
-  product_upc CHAR(12)
-    */
 
     return (
         <div className="Edit_Delete">

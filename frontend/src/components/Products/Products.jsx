@@ -7,7 +7,6 @@ const API = process.env.REACT_APP_API_URL;
 export default function Products({ cart, setCart, loggedInAs }) {
   const [products, setProducts] = useState([]);
 
-  //sort function satisfies "front end calculation . . . displayed to user".
   useEffect(() => {
     axios.get(`${API}/products`)
       .then((response) => {

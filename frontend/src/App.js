@@ -22,7 +22,7 @@ import RetailerNewProduct from "./components/Retailers/RetailerNewProduct.jsx";
 import RetailerEditProduct from "./components/Retailers/RetailerEditProduct.jsx";
 import RetailerShowProduct from "./components/Retailers/RetailerShowProduct.jsx"
 
-import bootstrap from 'bootstrap';
+//import bootstrap from 'bootstrap';
 
 import { useEffect } from 'react';
 
