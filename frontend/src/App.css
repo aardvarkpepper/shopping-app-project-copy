@@ -153,8 +153,38 @@ td, th {
 }
 
 .centertext {
-    display: inline-block;
     text-align: center;
+}
+
+.Products {
+    display: flex;
+    justify-content: center;
+}
+
+.Product {
+    border-style: solid;
+    border-color: gold;
+    border-radius: 40px;
+    height: 730px;
+    align-items: center;
+    width: 400px;
+}
+
+.productNameContainer {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+.productName {
+    align-self: flex-end;
+}
+
+.productImage {
+    width: 200px;
+}
+.bigguns {
+    font-size: 40px;
 }
 
 .repcontainer {

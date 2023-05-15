@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Product from "./Product.jsx";
-import OrderAddProduct from "../Orders/OrderAddProduct.jsx";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Products({ cart, setCart, loggedInAs }) {
@@ -25,29 +24,22 @@ export default function Products({ cart, setCart, loggedInAs }) {
 
   return (
     <div>
-      <h1>Welcome to the Products page!</h1>
-      {products.map((product) => {
-        return (
-          <div key={`ProductContainer${product.id}`}>
-            <Product
-              key={`Product${product.id}`}
-              product={product}
-              cart={cart}
-              setCart={setCart}
-              loggedInAs={loggedInAs}
-
-            />
-            <OrderAddProduct
-              key={`OrderAddProduct${product.id}`}
-              productID={product.id}
-              productInStock={product.quantity_in_stock}
-              cart={cart}
-              setCart={setCart}
-              loggedInAs={loggedInAs}
-            />
-          </div>
-        )
-      })}
+      <h1 className="centertext">Welcome to the Products page!</h1>
+      <div className="Products">
+        {products.map((product) => {
+          return (
+            <span key={`ProductContainer${product.id}`}>
+              <Product
+                key={`Product${product.id}`}
+                product={product}
+                cart={cart}
+                setCart={setCart}
+                loggedInAs={loggedInAs}
+              />
+            </span>
+          )
+        })}
+      </div>
     </div>
   )
 }

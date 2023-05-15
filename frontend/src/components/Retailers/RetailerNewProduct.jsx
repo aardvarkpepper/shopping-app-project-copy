@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -41,81 +42,83 @@ export default function RetailerNewProduct() {
 
     return (
         <div className="New">
-            <form onSubmit={handleSubmit}>
+            <div className="centertext bigguns">Enter New Product!</div>
+            <div className="repcontainer">
+                <form onSubmit={handleSubmit}>
 
-                <label htmlFor="name">Name:</label>
-                <input
-                    id="name"
-                    value={product.name}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Product Name"
-                    required
-                />
-                <br />
-                <label htmlFor="description">Description:</label>
-                <input
-                    id="description"
-                    value={product.description}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Product Description"
-                    required
-                />
-                <br />
-                <label htmlFor="price">Price:</label>
-                <input
-                    id="price"
-                    value={product.price}
-                    type="number"
-                    onChange={handleTextChange}
-                    placeholder="Product Price"
-                    required
-                />
-                <br />
-                <label htmlFor="quantity_in_stock">Quantity In Stock:</label>
-                <input
-                    id="quantity_in_stock"
-                    value={product.quantity_in_stock}
-                    type="number"
-                    onChange={handleTextChange}
-                    placeholder="Quantity In Stock"
-                    required
-                />
-                <br />
-                <label htmlFor="card_id">Card ID:</label>
-                <input
-                    id="card_id"
-                    value={product.card_id}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Card ID"
-                    required
-                />
-                <br />
-                <label htmlFor="card_rarity">Card Rarity:</label>
-                <input
-                    id="card_rarity"
-                    value={product.card_rarity}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Card Rarity"
-                    required
-                />
-                <br />
-                <label htmlFor="product_upc">Product UPC:</label>
-                <input
-                    id="product_upc"
-                    value={product.product_upc}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Product UPC"
-                    required
-                />
-                <br />
-
-                <input type="submit" />
-            </form>
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        id="name"
+                        value={product.name}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Product Name"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="description">Description:</label>
+                    <input
+                        id="description"
+                        value={product.description}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Product Description"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="price">Price:</label>
+                    <input
+                        id="price"
+                        value={product.price}
+                        type="number"
+                        onChange={handleTextChange}
+                        placeholder="Product Price"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="quantity_in_stock">Quantity In Stock:</label>
+                    <input
+                        id="quantity_in_stock"
+                        value={product.quantity_in_stock}
+                        type="number"
+                        onChange={handleTextChange}
+                        placeholder="Quantity In Stock"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="card_id">Card ID:</label>
+                    <input
+                        id="card_id"
+                        value={product.card_id}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Card ID"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="card_rarity">Card Rarity:</label>
+                    <input
+                        id="card_rarity"
+                        value={product.card_rarity}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Card Rarity"
+                        required
+                    />
+                    <br />
+                    <label htmlFor="product_upc">Product UPC:</label>
+                    <input
+                        id="product_upc"
+                        value={product.product_upc}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Product UPC"
+                        required
+                    />
+                    <br />
+                    <button type="submit" className="slidyfunfun centerformbutton">Submit {gimmeSpace(1)}</button>
+                </form>
+            </div>
         </div>
     );
 }
