@@ -30,14 +30,21 @@ function EditCustomer({ setLoggedInAs }) {
   }, [id]);
 
   async function updateCustomer() {
-    await axios
-      .put(`${API}/customers/${id}`, editCustomer)
-      .then((response) => {
-        setEditCustomer(response.data);
-        navigate(`/customers`);
-      })
-      .catch((error) => console.warn("Error: PUT", error))
+    if (Number(id) === 1) {
+      console.log("id 1", id)
+      alert(`Action cancelled.  Guest user may not be deleted or modified.`)
+    } else {
+      console.log("id not 1", id)
+      await axios
+        .put(`${API}/customers/${id}`, editCustomer)
+        .then((response) => {
+          setEditCustomer(response.data);
+          navigate(`/customers`);
+        })
+        .catch((error) => console.warn("Error: PUT", error))
+    }
   }
+
 
   function handleTextChange(event) {
     setEditCustomer({ ...editCustomer, [event.target.id]: event.target.value });
@@ -101,8 +108,8 @@ function EditCustomer({ setLoggedInAs }) {
             type="text"
             value={
               editCustomer.address_street2 === null
-              ? ""
-              : editCustomer.address_street2
+                ? ""
+                : editCustomer.address_street2
             }
             onChange={handleTextChange}
           />
