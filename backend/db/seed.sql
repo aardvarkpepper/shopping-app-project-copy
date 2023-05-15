@@ -5,6 +5,7 @@
 INSERT INTO customers
 (first_name, last_name, email, phone, address_street, address_street2, address_city, address_state, address_postal_code, payment_info)
 VALUES
+('Guest', 'User', 'guestuser@nomail.com', '(000) 000-0000', '123 Elf Road', NULL, 'North Pole', 'Sea Ice', '88888', 'Payment: Coal'),           
 ('John', 'Smith', 'john@example.com', '(212) 555-1234', '123 Main St', 'Apt 1', 'Anytown', 'CA', '12345', 'Visa ending in 1234'),
 ('Jane', 'Doe', 'jane@example.com', '(718) 555-5678', '456 Oak Ave', NULL, 'Another City', 'NY', '67890', 'Mastercard ending in 5678'),
 ('Bob', 'Johnson', 'bob@example.com', '(347) 555-9012', '789 Elm St', 'Suite 3', 'Someplace', 'TX', '23456', 'American Express ending in 9012');

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 
-function CustomerDetails() {
+function CustomerDetails({setLoggedInAs}) {
   const [theCustomer, setTheCustomer] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,7 +26,22 @@ function CustomerDetails() {
       await axios
         .get(`${API}/customers/${id}`)
         .then(response => setTheCustomer(response.data))
-        .catch(error => console.error("Error: GET", error))
+        .catch(error => {
+          setTheCustomer({
+            id: "Guest",
+            first_name: "Guest",
+            last_name: "User",
+            email:  "guestuser@nomail.com",
+            phone:  "(000) 000-0000",
+            address_street: "123 Elf Road",
+            address_street2: null,
+            address_city:  "North Pole",
+            address_state: "Sea Ice",
+            address_postal_code: "88888",
+            payment_info: "Payment: Coal"
+          })
+          console.error("Error: GET", error)
+        })
     };
 
     getCustomersById();

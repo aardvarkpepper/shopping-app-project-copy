@@ -22,21 +22,19 @@ import RetailerNewProduct from "./components/Retailers/RetailerNewProduct.jsx";
 import RetailerEditProduct from "./components/Retailers/RetailerEditProduct.jsx";
 import RetailerShowProduct from "./components/Retailers/RetailerShowProduct.jsx"
 
-import { useEffect } from 'react';
-
 function App() {
   const [loggedInAs, setLoggedInAs] = useState({
-    id: "Guest",
+    id: 1,
     first_name: "Guest",
-    last_name: "Guest",
-    email:  "Guest@nomail.com",
-    phone:  "0000000000",
-    address_street: "No given street",
-    address_street2: "No given address",
-    address_city:  "No given city",
-    address_state: "No given state",
-    address_postal_code: "No given postal code",
-    payment_info: "No given payment type"
+    last_name: "User",
+    email:  "guestuser@nomail.com",
+    phone:  "(000) 000-0000",
+    address_street: "123 Elf Road",
+    address_street2: null,
+    address_city:  "North Pole",
+    address_state: "Sea Ice",
+    address_postal_code: "88888",
+    payment_info: "Payment: Coal"
   });
   /*
   id SERIAL PRIMARY KEY,
@@ -65,7 +63,7 @@ function App() {
 
             <Route exact path="/customers" element={<Customers setLoggedInAs={setLoggedInAs} />} />
             <Route exact path="/customers/new" element={<NewCustomer />} />
-            <Route exact path="/customers/:id" element={<CustomerDetails />} />
+            <Route exact path="/customers/:id" element={<CustomerDetails setLoggedInAs={setLoggedInAs}/>} />
             <Route exact path="/customers/:id/edit" element={<EditCustomer setLoggedInAs={setLoggedInAs} />} />
             <Route exact path="/customers/:id/cart" element={<CustomerCart loggedInAs={loggedInAs} customerCart={cart[`customer${loggedInAs.id}`]} cart={cart} setCart={setCart} />} />
             <Route exact path="/customers/:id/history" element={<CustomerHistory loggedInAs={loggedInAs} />} />
