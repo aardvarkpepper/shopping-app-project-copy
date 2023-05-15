@@ -13,16 +13,18 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
   const [checkoutComplete, setCheckoutComplete] = useState(false);
 
   useEffect(() => {
-    setItemIDArray(Object.keys(customerCart).map(lineItemOnOrder => Number(lineItemOnOrder.replace("product", ""))))
+    console.log("E1");
+    // setItemIDArray(Object.keys(customerCart).map(lineItemOnOrder => Number(lineItemOnOrder.replace("product", ""))))
   }, [customerCart])
 
   useEffect(() => {
-    axios.get(`${API}/products`)
-      .then((response) => {
-        const filteredList = response.data.filter(product => itemIDArray.includes(product.id))
-        setFilteredProducts(filteredList);
-      })
-      .catch((e) => console.warn("catch", e));
+    console.log("E2");
+    // axios.get(`${API}/products`)
+    //   .then((response) => {
+    //     const filteredList = response.data.filter(product => itemIDArray.includes(product.id))
+    //     setFilteredProducts(filteredList);
+    //   })
+    //   .catch((e) => console.warn("catch", e));
   }, [itemIDArray]);
 
   const listCartItems = () => {
