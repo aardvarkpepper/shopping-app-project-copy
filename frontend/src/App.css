@@ -1,0 +1,28 @@
+.background-slider {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: slideBackground 80s infinite;
+}
+
+@keyframes slideBackground {
+    0% {
+        background-image: url('./components/wallpapers/wall1.jpg');
+    }
+    20% {
+        background-image: url('./components/wallpapers/wall2.webp');
+    }
+    40% {
+        background-image: url('./components/wallpapers/wall3.webp');
+    }
+    60% {
+        background-image: url('./components/wallpapers/wall4.webp');
+    }
+    80% {
+        background-image: url('./components/wallpapers/wall5.webp');
+    }
+    100% {
+        background-image: url('./components/wallpapers/wall1.jpg');
+    }
+}
