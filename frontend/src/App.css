@@ -29,17 +29,29 @@
     }
 }
 
-.text-overlay {
-    color: gold;
-    text-shadow: 1px 0px 10px black;
-    font-weight: bold;
-}
-
 a:link,
 a:visited,
 a:hover,
 a:active {
     color: mediumblue;
-    text-shadow: 1px 0px 10px white;
+    text-shadow: 1px 0px 7px white;
     font-weight: bold;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    color: darkred;
+    text-shadow: 1px 0px 7px white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.text-overlay {
+    color: gold;
+    text-shadow: 1px 0px 7px black;
+    font-weight: bold;
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.3);
 }

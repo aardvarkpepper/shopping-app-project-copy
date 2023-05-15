@@ -26,7 +26,7 @@ export default function RetailerProducts() {
   }, [])
   return (
     <div>
-      <Table striped bordered hover className="text-overlay">
+      <Table striped bordered size="sm" responsive className="text-overlay">
         <thead>
           <tr>
             <th>Product</th>

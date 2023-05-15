@@ -11,7 +11,7 @@ export default function RetailerProduct({ product }) {
                 {product.description}
             </td>
             <td className="whitespace-nowrap px-6 py-4">
-                {product.price}
+                ${product.price}
             </td>
             <td className="whitespace-nowrap px-6 py-4">
                 {product.quantity_in_stock}
