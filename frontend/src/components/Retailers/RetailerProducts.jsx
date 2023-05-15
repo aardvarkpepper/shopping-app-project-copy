@@ -29,8 +29,8 @@ export default function RetailerProducts() {
       <Table striped border-dark responsive className="text-overlay">
         <thead>
           <tr>
-            <th class="fixed-width200">Product</th>
-            <th class="fixed-width300">Description</th>
+            <th>Product</th>
+            <th>Description</th>
             <th>Price</th>
             <th>Qty</th>
             <th>Card ID</th>

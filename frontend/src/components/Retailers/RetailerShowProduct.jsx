@@ -19,10 +19,6 @@ export default function RetailerShowProduct() {
             })
     }, [id]);
 
-    useEffect(() => {
-        console.log("Image reference", refString)
-    }, [refString])
-
     return (
         <div className="centertext">
             <h1>{product.name}</h1>

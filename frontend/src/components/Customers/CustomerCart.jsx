@@ -50,7 +50,6 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
         <Table striped border-dark responsive className="text-overlay">
           <tbody>
             {filteredProducts.map((product) => {
-              console.log("listCartItems filteredProducts");
               return (
                 <tr key={`listCartItems${product.id}`}>
                   <td className="px-2 py-2">

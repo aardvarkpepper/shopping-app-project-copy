@@ -150,8 +150,8 @@ export default function RetailerEditProduct() {
                 </form>
                 <span className="centertext">
                 <div>
-                    <Link to={`/retailer/products/${id}/:edit`} >
-                        <button className="slidyfunfun">Cancel {gimmeSpace(1)}</button>
+                    <Link to={`/retailer/products/`} >
+                        <button className="slidyfunfun">Return To Products {gimmeSpace(1)}</button>
                     </Link>
                 </div>
                 <div>

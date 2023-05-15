@@ -141,7 +141,7 @@ td, th {
     border-style: solid;
     border-color: gold;
     border-radius: 40px;
-    height: 730px;
+    height: 760px;
     align-items: center;
     width: 400px;
 }
@@ -197,13 +197,6 @@ nav {
     background-color: black;
 }
 
-.navbackground {
-    background-image: url('./components/imagefiles/One_Piece_Anime_Logo.webp');
-    /* background-image: url('./components/imagefiles/One_Piece_Anime_Logo.webp') repeat-x; */
-    /* background-size: cover;
-    animation: horizontalslide 20s linear infinite; */
-}
-
 @keyframes horizontalslide {
     0% {
         transform: translateX(0);
@@ -216,6 +209,8 @@ nav {
 .bottom-element {
     position: absolute;
     top: 88px;
+    left: 0;
+    width: 100%;
 }
 
 .navlogo {

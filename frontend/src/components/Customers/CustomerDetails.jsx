@@ -62,7 +62,7 @@ function CustomerDetails({ setLoggedInAs }) {
   };
 
   return (
-    <div className="Customer-Details">
+    <div className="Customer-Details centerme">
       <div>
         <h2>{first_name} {last_name}</h2>
         <p>{phone}</p>
@@ -76,6 +76,7 @@ function CustomerDetails({ setLoggedInAs }) {
           <button className="slidyfunfun">Edit {gimmeSpace(1)}</button>
         </Link> : <div></div>}
         <button onClick={() => handleDelete()} className="slidyfunfun">Delete {gimmeSpace(1)}</button>
+        <br />
         <Link to={`/customers/${id}/history`}>
           <button className="slidyfunfun">Purchase History {gimmeSpace(1)}</button>
         </Link>
