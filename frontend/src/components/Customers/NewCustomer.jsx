@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 const API = process.env.REACT_APP_API_URL;
 
 function NewCustomer() {
@@ -129,11 +130,11 @@ function NewCustomer() {
             required
           />
         </div>
-        <button type="submit">
-          Submit
+        <button type="submit" className="slidyfunfun">
+          Submit {gimmeSpace(1)}
         </button>
       </form>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(-1)} className="slidyfunfun">Back {gimmeSpace(1)}</button>
     </div>
   );
 }

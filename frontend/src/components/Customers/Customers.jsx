@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Customer from "./Customer.jsx";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
+
 const API = process.env.REACT_APP_API_URL;
 
 function Customers({ setLoggedInAs }) {
@@ -18,7 +20,7 @@ function Customers({ setLoggedInAs }) {
   }, []);
 
   return (
-    <div>
+    <div className="centerme">
       <h1>Welcome to the Customers page!</h1>
 
       <ul>Login As:
@@ -28,7 +30,9 @@ function Customers({ setLoggedInAs }) {
           })
         }
         <li>
-          <Link to="/customers/new">New Customer</Link>
+          <Link to="/customers/new">
+            <button className="slidyfunfun">New Customer {gimmeSpace(1)}</button>
+          </Link>
         </li>
       </ul>
     </div>

@@ -11,6 +11,7 @@
     animation: slideBackground 80s infinite;
     background-repeat: repeat;
     overflow-y: auto;
+    height: 1;
 }
 
 @keyframes slideBackground {
@@ -31,6 +32,66 @@
     }
     100% {
         background-image: url('./components/imagefiles/wall1.jpg');
+    }
+}
+
+.slidyfunfun
+{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg, 
+        red 0%,
+        orange 7%,
+        green 21%,
+        blue 35%,
+        indigo 49%,
+        blue 63%,
+        green 77%,
+        orange 91%,
+        red 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: white;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+.slidyfunfun    
+{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg, 
+        red 0%,
+        orange 7%,
+        green 21%,
+        blue 35%,
+        indigo 49%,
+        blue 63%,
+        green 77%,
+        orange 91%,
+        red 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: white;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
     }
 }
 
@@ -75,6 +136,10 @@ td, th {
     box-shadow: 2px 2px 4px rgb(255,255,255,0.2);
 }
 
+.tabletext {
+    font-size: 16px;
+}
+
 .fixed-width100 {
     width: 100px;
 }
@@ -88,9 +153,77 @@ td, th {
 }
 
 .centertext {
+    display: inline-block;
     text-align: center;
+}
+
+.repcontainer {
+    width: 290px;
+    margin: auto;
+}
+
+.centerformbutton {
+    margin-left: 84px;
 }
 
 .h1 {
     font-family: Bangers-Regular;
+}
+
+.slimshady {
+    background-color:rgba(0,0,0,0.5);
+}
+
+nav {
+    display: inline-flex;
+    position: sticky;
+    padding: 10px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 25px;
+    border-color: gold;
+    justify-content: space-between;
+}
+
+.navlogo {
+    width: 15%;
+    justify-content: left;
+    margin-right: 20px;
+}
+
+.navtext {
+    vertical-align: bottom;
+    justify-content: center;
+    align-self: flex-end;
+    padding-left: 10px;
+    border-radius:20px;
+    background-color:rgba(0,0,0,0.2);
+}
+
+.tabletextlink {
+    padding-left: 10px;
+    background-color: white;
+}
+
+button {
+    border-style: groove;
+    border-color: gold;
+    border-width: 4px;
+    border-radius:25px;
+    padding-left: 15px;
+    background-image: linear-gradient(to bottom, powderblue 0%, paleturquoise 40%, royalblue 60%, navy 80%, navy 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 0px 7px yellowgreen;
+    font-family: 'Bangers-Regular', sans-serif;
+    font-size: 30px;
+    height: 2;
+}
+
+.centerme {
+    text-align: center;
+}
+
+ul {
+    font-size: 25px;
 }

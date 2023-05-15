@@ -1,32 +1,37 @@
 import { Link } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 
 export default function RetailerProduct({ product }) {
 
     return (
         <tr>
-            <td className="px-2 py-2">
+            <td>
                 {product.name}
             </td>
-            <td className="px-2 py-2">
+            <td>
                 {product.description}
             </td>
-            <td className="px-2 py-2">
+            <td>
                 ${product.price}
             </td>
-            <td className="px-2 py-2 centertext">
+            <td>
                 {product.quantity_in_stock}
             </td>
-            <td className="px-2 py-2">
+            <td>
                 {product.card_id}
             </td>
-            <td className="px-2 py-2">
+            <td>
                 {product.card_rarity}
             </td>
-            <td className="px-2 py-2">
+            <td>
                 {product.product_upc}
             </td>
-            <td className="px-2 py-2">
-                <Link to={`/retailer/products/${product.id}`}>Show Product</Link>
+            <td className="tabletextlink">
+                <Link to={`/retailer/products/${product.id}`}>
+                    <span className="slidyfunfun tabletext">
+                        Show Product{gimmeSpace(1)}
+                    </span>
+                </Link>
             </td>
         </tr>
     );

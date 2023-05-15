@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-
+import { gimmeSpace } from "../utilities/utilityFunctions";
 function Home() {
   return (
-    <div>
+    <div className="centerme">
       <h1>Welcome to the Home page!</h1>
 
       <h3>Are you:</h3>
       <Link to="/customers">
-        <button>Customer</button>
+        <button className="slidyfunfun">Customer {gimmeSpace(1)}</button>
       </Link>
       <Link to="/retailer/products">
-        <button>Retailer</button>
+        <button className="slidyfunfun">Retailer {gimmeSpace(1)}</button>
       </Link>
     </div>
   )

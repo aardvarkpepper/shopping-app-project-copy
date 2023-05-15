@@ -67,12 +67,12 @@ function App() {
   },[]);
 
   return (
-    <div className="App background-slider text-overlay">
+    <div className="App text-overlay">
       <Router>
         <header>
           <NavBar loggedInAs={loggedInAs} />
         </header>
-        <main>
+        <main className="background-slider">
           <Routes>
             <Route path="/" element={<Home />} />
 

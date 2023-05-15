@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 const API = process.env.REACT_APP_API_URL
 
 export default function RetailerShowProduct() {
@@ -23,8 +24,8 @@ export default function RetailerShowProduct() {
     }, [refString])
 
     return (
-        <div>
-            <h4>{product.name}</h4>
+        <div className="centertext">
+            <h1>{product.name}</h1>
             <h5>{product.description}</h5>
             <img src={refString} alt={`${product.description}`} style={{ "width": "200px" }}></img>
             <p>${product.price} per</p>
@@ -33,7 +34,7 @@ export default function RetailerShowProduct() {
             <p>Rarity: {product.card_rarity}</p>
             <p>UPC:  {product.product_upc}</p>
             <Link to={`/retailer/products/${product.id}/edit`}>
-                <button>Edit</button>
+                <button className="slidyfunfun">Edit {gimmeSpace(1)}</button>
             </Link>
         </div >
     )

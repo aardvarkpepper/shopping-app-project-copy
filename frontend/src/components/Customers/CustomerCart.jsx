@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Table from 'react-bootstrap/Table';
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 
 const API = process.env.REACT_APP_API_URL;
 const {
@@ -133,7 +134,7 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
         {loggedInAs.first_name}'s Cart
       </h1>
       {listCartItems()}
-      <button onClick={handleCheckout}>Checkout</button>
+      <button onClick={handleCheckout} className="slidyfunfun">Checkout {gimmeSpace(1)}</button>
     </div>
   )
 }

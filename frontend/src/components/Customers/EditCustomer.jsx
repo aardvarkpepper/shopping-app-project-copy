@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 const API = process.env.REACT_APP_API_URL;
 
 function EditCustomer({ setLoggedInAs }) {
@@ -143,11 +144,11 @@ function EditCustomer({ setLoggedInAs }) {
             required
           />
         </div>
-        <button type="submit">
-          Submit
+        <button type="submit" className="slidyfunfun">
+          Submit {gimmeSpace(1)}
         </button>
       </form>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(-1) } className="slidyfunfun">Back {gimmeSpace(1)}</button>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 
 function Customer({ customer, setLoggedInAs }) {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function Customer({ customer, setLoggedInAs }) {
   return (
     <>
       <li>
-        <button onClick={() => handleOnClick()}>{customer.first_name}</button>
+        <button onClick={() => handleOnClick()} className="slidyfunfun">{customer.first_name} {gimmeSpace(1)}</button>
       </li>
     </>
   )

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
 const API = process.env.REACT_APP_API_URL;
 
 function CustomerDetails({ setLoggedInAs }) {
@@ -70,13 +71,13 @@ function CustomerDetails({ setLoggedInAs }) {
         <p>{payment_info}</p>
       </div>
       <div>
-        <button onClick={() => navigate(-1)}>Back</button>
+        <button onClick={() => navigate(-1)} className="slidyfunfun">Back {gimmeSpace(1)}</button>
         {Number(id) !== 1 ? <Link to={`/customers/${id}/edit`}>
-          <button>Edit</button>
+          <button className="slidyfunfun">Edit {gimmeSpace(1)}</button>
         </Link> : <div></div>}
-        <button onClick={() => handleDelete()} style={{ "color": "red" }}>Delete</button>
+        <button onClick={() => handleDelete()} className="slidyfunfun">Delete {gimmeSpace(1)}</button>
         <Link to={`/customers/${id}/history`}>
-          <button>Purchase History</button>
+          <button className="slidyfunfun">Purchase History {gimmeSpace(1)}</button>
         </Link>
       </div>
     </div>
