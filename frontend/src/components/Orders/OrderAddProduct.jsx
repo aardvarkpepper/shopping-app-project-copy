@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { gimmeSpace } from "../../utilities/utilityFunctions";
+
 
 export default function OrderAddProduct({ productInStock, cart, setCart, loggedInAs, productID }) {
   const [formQty, setFormQty] = useState(0);
@@ -34,7 +36,7 @@ export default function OrderAddProduct({ productInStock, cart, setCart, loggedI
           placeholder="0"
         />
         <br />
-        <input type="submit" value="Add To Cart"/>
+        <button type="submit" className="slidyfunfun">Add To Cart {gimmeSpace(1)}</button>
       </form>
       <div>
         {confirmAddToCart ? "Order added to cart" : ""}

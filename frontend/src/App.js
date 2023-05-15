@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar.jsx";
-import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Error from "./pages/Error.jsx";
 
@@ -64,39 +63,41 @@ function App() {
         families: ['Font Name: Bangers-Regular'],
       },
     });
-  },[]);
+  }, []);
 
   return (
     <div className="App text-overlay">
       <Router>
         <header>
-          <NavBar loggedInAs={loggedInAs} />
+          <div>
+            <NavBar loggedInAs={loggedInAs} />
+          </div>
+
         </header>
-        <main className="background-slider">
-          <Routes>
-            <Route path="/" element={<Home />} />
+        <main className="bottom-element">
+          <div className="background-slider">
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route exact path="/customers" element={<Customers setLoggedInAs={setLoggedInAs} />} />
-            <Route exact path="/customers/new" element={<NewCustomer />} />
-            <Route exact path="/customers/:id" element={<CustomerDetails setLoggedInAs={setLoggedInAs} />} />
-            <Route exact path="/customers/:id/edit" element={<EditCustomer setLoggedInAs={setLoggedInAs} />} />
-            <Route exact path="/customers/:id/cart" element={<CustomerCart loggedInAs={loggedInAs} customerCart={cart[`customer${loggedInAs.id}`]} cart={cart} setCart={setCart} />} />
-            <Route exact path="/customers/:id/history" element={<CustomerHistory loggedInAs={loggedInAs} />} />
+              <Route exact path="/customers" element={<Customers setLoggedInAs={setLoggedInAs} />} />
+              <Route exact path="/customers/new" element={<NewCustomer />} />
+              <Route exact path="/customers/:id" element={<CustomerDetails setLoggedInAs={setLoggedInAs} />} />
+              <Route exact path="/customers/:id/edit" element={<EditCustomer setLoggedInAs={setLoggedInAs} />} />
+              <Route exact path="/customers/:id/cart" element={<CustomerCart loggedInAs={loggedInAs} customerCart={cart[`customer${loggedInAs.id}`]} cart={cart} setCart={setCart} />} />
+              <Route exact path="/customers/:id/history" element={<CustomerHistory loggedInAs={loggedInAs} />} />
 
-            <Route path="/products" element={<Products cart={cart} setCart={setCart} loggedInAs={loggedInAs} />} />
-            <Route path="/products/:id" element={<Product />} />
+              <Route path="/products" element={<Products cart={cart} setCart={setCart} loggedInAs={loggedInAs} />} />
+              <Route path="/products/:id" element={<Product />} />
 
-            <Route path="/retailer/products" element={<RetailerProducts />} />
-            <Route path="/retailer/products/new" element={<RetailerNewProduct />} />
-            <Route exact path="/retailer/products/:id" element={<RetailerShowProduct />} />
-            <Route exact path="/retailer/products/:id/edit" element={<RetailerEditProduct />} />
+              <Route path="/retailer/products" element={<RetailerProducts />} />
+              <Route path="/retailer/products/new" element={<RetailerNewProduct />} />
+              <Route exact path="/retailer/products/:id" element={<RetailerShowProduct />} />
+              <Route exact path="/retailer/products/:id/edit" element={<RetailerEditProduct />} />
 
-            <Route path="/*" element={<Error />} />
-          </Routes>
+              <Route path="/*" element={<Error />} />
+            </Routes>
+          </div>
         </main>
-        <footer>
-          <Footer />
-        </footer>
       </Router>
     </div>
   );
