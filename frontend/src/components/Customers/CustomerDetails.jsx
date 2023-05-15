@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 
-function CustomerDetails({setLoggedInAs}) {
+function CustomerDetails({ setLoggedInAs }) {
   const [theCustomer, setTheCustomer] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -31,11 +31,11 @@ function CustomerDetails({setLoggedInAs}) {
             id: "Guest",
             first_name: "Guest",
             last_name: "User",
-            email:  "guestuser@nomail.com",
-            phone:  "(000) 000-0000",
+            email: "guestuser@nomail.com",
+            phone: "(000) 000-0000",
             address_street: "123 Elf Road",
             address_street2: null,
-            address_city:  "North Pole",
+            address_city: "North Pole",
             address_state: "Sea Ice",
             address_postal_code: "88888",
             payment_info: "Payment: Coal"
@@ -48,11 +48,15 @@ function CustomerDetails({setLoggedInAs}) {
   }, [id]);
 
   async function handleDelete() {
-    if (window.confirm("Are you sure you want to delete this Account?")) {
-      await axios
-        .delete(`${API}/customers/${id}`)
-        .then(() => navigate('/customers'))
-        .catch(error => console.error("Error: DELETE", error));
+    if (Number(id) === 1) {
+      alert(`Action cancelled.  Guest user may not be deleted or modified.`)
+    } else {
+      if (window.confirm("Are you sure you want to delete this Account?")) {
+        await axios
+          .delete(`${API}/customers/${id}`)
+          .then(() => navigate('/customers'))
+          .catch(error => console.error("Error: DELETE", error));
+      }
     }
   };
 
@@ -67,10 +71,10 @@ function CustomerDetails({setLoggedInAs}) {
       </div>
       <div>
         <button onClick={() => navigate(-1)}>Back</button>
-        <Link to={`/customers/${id}/edit`}>
+        {Number(id) !== 1 ? <Link to={`/customers/${id}/edit`}>
           <button>Edit</button>
-        </Link>
-        <button onClick={() => handleDelete()} style={{"color": "red"}}>Delete</button>
+        </Link> : <div></div>}
+        <button onClick={() => handleDelete()} style={{ "color": "red" }}>Delete</button>
         <Link to={`/customers/${id}/history`}>
           <button>Purchase History</button>
         </Link>
