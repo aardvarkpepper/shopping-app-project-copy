@@ -26,3 +26,18 @@
         background-image: url('./components/wallpapers/wall1.jpg');
     }
 }
+
+.text-overlay {
+    color: gold;
+    text-shadow: 1px 0px 10px black;
+    font-weight: bold;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: mediumblue;
+    text-shadow: 1px 0px 10px white;
+    font-weight: bold;
+}

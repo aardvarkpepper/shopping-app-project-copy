@@ -54,12 +54,10 @@ function App() {
   const [cart, setCart] = useState({});
 
   return (
-    <div className="App background-slider">
+    <div className="App background-slider text-overlay">
       <Router>
         <header>
-
           <NavBar loggedInAs={loggedInAs} />
-
         </header>
         <main>
           <Routes>
