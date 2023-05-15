@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Error from "./pages/Error.jsx";
-import About from "./pages/About.jsx";
 
 import Customers from "./components/Customers/Customers.jsx";
 import NewCustomer from "./components/Customers/NewCustomer.jsx";
@@ -75,8 +74,6 @@ function App() {
             <Route path="/retailer/products/new" element={<RetailerNewProduct />} />
             <Route exact path="/retailer/products/:id" element ={<RetailerShowProduct />} />
             <Route exact path="/retailer/products/:id/edit" element={<RetailerEditProduct />} />
-            
-            <Route path="/about" element={<About />} />
 
             <Route path="/*" element={<Error />} />
           </Routes>
