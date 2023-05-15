@@ -13,18 +13,24 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
   const [checkoutComplete, setCheckoutComplete] = useState(false);
 
   useEffect(() => {
-    console.log("E1");
-    // setItemIDArray(Object.keys(customerCart).map(lineItemOnOrder => Number(lineItemOnOrder.replace("product", ""))))
-  }, [customerCart])
+    // console.log("E1");
+    // console.log("Obj keys", Object.keys(customerCart));
+    // console.log("map", [].map((lineItemOnOrder => Number(lineItemOnOrder.replace("product", "")))));
+    if (Object.keys(customerCart).length !== 0) {
+          setItemIDArray(Object.keys(customerCart).map(lineItemOnOrder => Number(lineItemOnOrder.replace("product", ""))))
+    }
+  }, [customerCart]);
 
   useEffect(() => {
     console.log("E2");
-    // axios.get(`${API}/products`)
-    //   .then((response) => {
-    //     const filteredList = response.data.filter(product => itemIDArray.includes(product.id))
-    //     setFilteredProducts(filteredList);
-    //   })
-    //   .catch((e) => console.warn("catch", e));
+    axios.get(`${API}/products`)
+      .then((response) => {
+        const filteredList = response.data.filter(product => {
+          return (itemIDArray.includes(product.id));
+        })
+        setFilteredProducts(filteredList);
+      })
+      .catch((e) => console.warn("catch", e));
   }, [itemIDArray]);
 
   const listCartItems = () => {
