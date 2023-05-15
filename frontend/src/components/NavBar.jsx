@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
 import { gimmeSpace } from "../utilities/utilityFunctions";
+import Navbar from 'react-bootstrap/Navbar';
 
 function NavBar({ loggedInAs }) {
 
   return (
-    <nav>
+    <Navbar>
+      <Navbar.Brand href="#home">
+        <img
+        src={require('./imagefiles/one-piece-logo.png')}
+        width="200"
+        className="d-inline-block align-top"
+        alt="One Piece logo"
+        />
+      </Navbar.Brand>
       <Link to="/">
-        <h1>Shopping App</h1>
+        <h1>SHOPPING APP</h1>
       </Link>
       {loggedInAs.first_name && (
         <>
@@ -26,7 +35,7 @@ function NavBar({ loggedInAs }) {
           </Link>
         </>
       )}
-    </nav>
+    </Navbar>
   )
 }
 

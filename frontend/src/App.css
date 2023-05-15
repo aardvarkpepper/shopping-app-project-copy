@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Bangers-Regular";
+    src: url("./fonts/Bangers-Regular.ttf") format("truetype");
+}
+
 .background-slider {
     width: 100%;
     height: 100vh;
@@ -10,22 +15,22 @@
 
 @keyframes slideBackground {
     0% {
-        background-image: url('./components/wallpapers/wall1.jpg');
+        background-image: url('./components/imagefiles/wall1.jpg');
     }
     20% {
-        background-image: url('./components/wallpapers/wall2.webp');
+        background-image: url('./components/imagefiles/wall2.webp');
     }
     40% {
-        background-image: url('./components/wallpapers/wall3.webp');
+        background-image: url('./components/imagefiles/wall3.webp');
     }
     60% {
-        background-image: url('./components/wallpapers/wall4.webp');
+        background-image: url('./components/imagefiles/wall4.webp');
     }
     80% {
-        background-image: url('./components/wallpapers/wall5.webp');
+        background-image: url('./components/imagefiles/wall5.webp');
     }
     100% {
-        background-image: url('./components/wallpapers/wall1.jpg');
+        background-image: url('./components/imagefiles/wall1.jpg');
     }
 }
 
@@ -33,25 +38,59 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-    color: mediumblue;
-    text-shadow: 1px 0px 7px white;
-    font-weight: bold;
+    background-image: linear-gradient(to bottom, powderblue 0%, paleturquoise 40%, royalblue 60%, navy 80%, navy 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 0px 7px steelblue;
+    font-family: 'Bangers-Regular', sans-serif;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
-    color: darkred;
+    color: maroon;
     text-shadow: 1px 0px 7px white;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: Bangers-Regular;
 }
 
 .text-overlay {
     color: gold;
     text-shadow: 1px 0px 7px black;
     font-weight: bold;
+    font-family: Bangers-Regular;
 }
 
 .table {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+thead {
+    background-color: rgba(0, 0, 200, 0.6);
+}
+
+td, th {
+    border-width:2px;
+    border-color: orange;
+    box-shadow: 2px 2px 4px rgb(255,255,255,0.2);
+}
+
+.fixed-width100 {
+    width: 100px;
+}
+
+.fixed-width200 {
+    width: 200px;
+}
+
+.fixed-width300 {
+    width: 300px;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.h1 {
+    font-family: Bangers-Regular;
 }

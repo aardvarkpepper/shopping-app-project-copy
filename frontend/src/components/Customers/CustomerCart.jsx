@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Table from 'react-bootstrap/Table';
 
 const API = process.env.REACT_APP_API_URL;
 const {
@@ -45,19 +46,19 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
       )
     } else {
       return (
-        <table>
+        <Table striped border-dark responsive className="text-overlay">
           <tbody>
             {filteredProducts.map((product) => {
               console.log("listCartItems filteredProducts");
               return (
                 <tr key={`listCartItems${product.id}`}>
-                  <td>
+                  <td className="px-2 py-2">
                     <img src={require(`../Products${(product.image_url).replace(".", "")}`)} alt={`${product.description}`} style={{ "width": "50px" }}></img>
                   </td>
-                  <td>
+                  <td className="px-2 py-2">
                     {product.name}
                   </td>
-                  <td>
+                  <td className="px-2 py-2">
                     Quantity Ordered: {customerCart[`product${product.id}`]}
                   </td>
                 </tr>
@@ -65,7 +66,7 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
             })
             }
           </tbody>
-        </table>
+        </Table>
       )
     }
   }

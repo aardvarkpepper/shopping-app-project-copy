@@ -26,13 +26,13 @@ export default function RetailerProducts() {
   }, [])
   return (
     <div>
-      <Table striped bordered size="sm" responsive className="text-overlay">
+      <Table striped border-dark responsive className="text-overlay">
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Description</th>
+            <th class="fixed-width200">Product</th>
+            <th class="fixed-width300">Description</th>
             <th>Price</th>
-            <th>Qty In Stock</th>
+            <th>Qty</th>
             <th>Card ID</th>
             <th>Rarity</th>
             <th>UPC</th>
