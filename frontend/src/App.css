@@ -4,6 +4,8 @@
     background-size: cover;
     background-position: center;
     animation: slideBackground 80s infinite;
+    background-repeat: repeat;
+    overflow-y: auto;
 }
 
 @keyframes slideBackground {

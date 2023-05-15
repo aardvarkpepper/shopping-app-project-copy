@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import RetailerProduct from "./RetailerProduct.jsx"
+import RetailerProduct from "./RetailerProduct.jsx";
+import Table from 'react-bootstrap/Table';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,7 +26,7 @@ export default function RetailerProducts() {
   }, [])
   return (
     <div>
-      <table>
+      <Table striped bordered hover className="text-overlay">
         <thead>
           <tr>
             <th>Product</th>
@@ -43,7 +44,7 @@ export default function RetailerProducts() {
             return <RetailerProduct key={`RetailerProduct${product.id}`} product={product} />;
           })}
         </tbody>
-      </table>
+      </Table>
     </div >
   );
 }
