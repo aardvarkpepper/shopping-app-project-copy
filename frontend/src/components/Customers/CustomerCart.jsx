@@ -48,18 +48,33 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
     } else {
       return (
         <Table striped border-dark responsive className="text-overlay">
+          <thead>
+            <tr>
+              <th>Card</th>
+              <th>Name</th>
+              <th>Price Per</th>
+              <th>Qty Order</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
           <tbody>
             {filteredProducts.map((product) => {
               return (
                 <tr key={`listCartItems${product.id}`}>
-                  <td className="px-2 py-2">
+                  <td className="centerme">
                     <img src={require(`../Products${(product.image_url).replace(".", "")}`)} alt={`${product.description}`} style={{ "width": "50px" }}></img>
                   </td>
-                  <td className="px-2 py-2">
+                  <td>
                     {product.name}
                   </td>
-                  <td className="px-2 py-2">
-                    Quantity Ordered: {customerCart[`product${product.id}`]}
+                  <td>
+                    ${product.price}
+                  </td>
+                  <td>
+                    {customerCart[`product${product.id}`]}
+                  </td>
+                  <td>
+                    ${(Number(customerCart[`product${product.id}`]) * Number(product.price)).toFixed(2)}
                   </td>
                 </tr>
               )
