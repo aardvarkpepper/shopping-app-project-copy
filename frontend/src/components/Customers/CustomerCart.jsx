@@ -12,17 +12,17 @@ export default function CustomerCart({ loggedInAs, cart, setCart, customerCart =
   const [itemIDArray, setItemIDArray] = useState([]);
   const [checkoutComplete, setCheckoutComplete] = useState(false);
 
+  /*
+  First useEffect causes second useEffect to trigger, but not when there is data in customerCart.  Why?  Possibly response.data.filter(all false) or
+  [].includes(product.id)  useRef alternate solution.
+  */
   useEffect(() => {
-    // console.log("E1");
-    // console.log("Obj keys", Object.keys(customerCart));
-    // console.log("map", [].map((lineItemOnOrder => Number(lineItemOnOrder.replace("product", "")))));
     if (Object.keys(customerCart).length !== 0) {
           setItemIDArray(Object.keys(customerCart).map(lineItemOnOrder => Number(lineItemOnOrder.replace("product", ""))))
     }
   }, [customerCart]);
 
   useEffect(() => {
-    console.log("E2");
     axios.get(`${API}/products`)
       .then((response) => {
         const filteredList = response.data.filter(product => {
