@@ -55,7 +55,7 @@
     background-size: 200% auto;
     color: white;
     background-clip: text;
-    text-fill-color: transparent;
+    /* text-fill-color: transparent; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
@@ -72,6 +72,7 @@ a:link,
 a:visited,
 a:hover,
 a:active {
+    background-clip: none;
     background-image: linear-gradient(to bottom, powderblue 0%, paleturquoise 40%, royalblue 60%, navy 80%, navy 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -240,6 +241,7 @@ button {
     border-radius:25px;
     padding-left: 15px;
     background-image: linear-gradient(to bottom, powderblue 0%, paleturquoise 40%, royalblue 60%, navy 80%, navy 100%);
+    background-clip: none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 0px 7px yellowgreen;
