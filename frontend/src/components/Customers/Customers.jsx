@@ -30,7 +30,6 @@ function Customers({ setLoggedInAs }) {
         <li>
           <Link to="/customers/new">New Customer</Link>
         </li>
-        <li>Guest</li>
       </ul>
     </div>
   )

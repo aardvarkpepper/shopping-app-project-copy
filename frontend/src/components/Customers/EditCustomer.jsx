@@ -31,10 +31,8 @@ function EditCustomer({ setLoggedInAs }) {
 
   async function updateCustomer() {
     if (Number(id) === 1) {
-      console.log("id 1", id)
       alert(`Action cancelled.  Guest user may not be deleted or modified.`)
     } else {
-      console.log("id not 1", id)
       await axios
         .put(`${API}/customers/${id}`, editCustomer)
         .then((response) => {
