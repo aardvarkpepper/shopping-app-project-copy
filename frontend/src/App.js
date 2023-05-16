@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar.jsx";
@@ -22,7 +22,7 @@ import RetailerShowProduct from "./components/Retailers/RetailerShowProduct.jsx"
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import WebFont from 'webfontloader';
+// import WebFont from 'webfontloader';
 
 /*
 Used npm install webfontloader.  This file and .css have applicable code.
@@ -57,13 +57,13 @@ function App() {
   */
   const [cart, setCart] = useState({});
 
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ['Font Name: Bangers-Regular'],
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   WebFont.load({
+  //     google: {
+  //       families: ['Font Name: Bangers-Regular'],
+  //     },
+  //   });
+  // }, []);
 
   return (
     <div className="App text-overlay">

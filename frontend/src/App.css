@@ -1,7 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: "Bangers-Regular";
     src: url("./fonts/Bangers-Regular.ttf") format("truetype");
+} */
+.hamster {
+    font-family: 'Lobster', cursive;
 }
+
 
 .background-slider {
     width: 100%;
@@ -77,7 +81,8 @@ a:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 0px 7px steelblue;
-    font-family: 'Bangers-Regular', sans-serif;
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Bangers-Regular', sans-serif; */
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td,
@@ -86,14 +91,16 @@ a:active {
     text-shadow: 1px 0px 7px white;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.5);
-    font-family: Bangers-Regular;
+    font-family: 'Lobster', cursive;
+    /* font-family: Bangers-Regular; */
 }
 
 .text-overlay {
     color: gold;
     text-shadow: 1px 0px 7px black;
     font-weight: bold;
-    font-family: Bangers-Regular;
+    font-family: 'Lobster', cursive;
+    /* font-family: Bangers-Regular; */
 }
 
 .table {
@@ -174,7 +181,8 @@ td, th {
 }
 
 .h1 {
-    font-family: Bangers-Regular;
+    font-family: 'Lobster', cursive;
+    /* font-family: Bangers-Regular; */
 }
 
 .slimshady {
@@ -245,7 +253,8 @@ button {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 1px 0px 7px yellowgreen;
-    font-family: 'Bangers-Regular', sans-serif;
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Bangers-Regular', sans-serif; */
     font-size: 30px;
     height: 2;
 }
