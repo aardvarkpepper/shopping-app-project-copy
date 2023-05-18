@@ -1,3 +1,7 @@
+Deployed at
+
+https://cosmic-faloodeh-1789f0.netlify.app/
+
 # Shopping App Project (Full Stack)
 Pursuit 9.4 Module 4 - Single Resource Pair Project (Frontend & Backend)
 
